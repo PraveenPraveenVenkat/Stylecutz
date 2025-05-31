@@ -10,114 +10,137 @@ const Footer = () => {
   return (
     <Box
       sx={{
-      
-        backgroundColor: "#0d2f87",
-        height: "15rem",
+        backgroundColor: "#168b7c",
         width: "100%",
+        maxWidth: "100%",
         borderRadius: "2rem",
-        p: 4,
-         zIndex: 10,
+        p: { xs: 2, sm: 3, md: 4 },
+        zIndex: 10,
+        mt: 4,
+        boxSizing: "border-box",
+        overflowX: "hidden",
       }}
     >
-      {/* Flex container to arrange boxes horizontally */}
       <Box
         sx={{
           display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-around",
+          flexDirection: { xs: "column", md: "row" },
+          justifyContent: "space-between",
           alignItems: "flex-start",
-          gap: 3,
-          pt:'2rem',
+          flexWrap: "wrap",
+          gap: { xs: 2, md: 3 },
+          width: "100%",
+          maxWidth: "100%",
+          boxSizing: "border-box",
         }}
       >
         {/* Box 1 */}
-<Box
-  sx={{
-    backgroundColor: "white",
-    width: "10rem",
-    borderRadius: "0.9rem",
-    p: 2,
-  }}
->
-  <Typography variant="h6">Style cutz</Typography>
-
-    
-
-  <Typography variant="body2" sx={{ mt: 1 }}>
-    lovely, change, perfect <br />
-    will do it... <br />
-    we are develop our personality!
-  </Typography>
-
-  <Box sx={{ mt: 1, display: "flex", alignItems: "center" }}>
-    <InstagramIcon sx={{ mr: 1 }} />
-    <FacebookTwoTone />
-  </Box>
-</Box>
-
-
-
-        {/* <Box
+        <Box
           sx={{
             backgroundColor: "white",
-            width: "7rem",
-            height: "3rem",
             borderRadius: "0.9rem",
             p: 2,
+            flex: "1 1 300px",
+            boxSizing: "border-box",
           }}
         >
-          <Typography variant="h6">Style cutz</Typography>
-           </Box>
-          <Typography variant="body2">
+          <Typography variant="h6" sx={{ fontFamily: "Cinzel, serif" }}>
+            Style cutz
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{ mt: 1, fontFamily: "Cinzel, serif" }}
+          >
             lovely, change, perfect <br />
             will do it... <br />
             we are develop our personality!
           </Typography>
-          <Box sx={{ mt: 1 }}>
+          <Box sx={{ mt: 1, display: "flex", alignItems: "center" }}>
             <InstagramIcon sx={{ mr: 1 }} />
             <FacebookTwoTone />
-         
-        </Box> */}
+          </Box>
+        </Box>
 
         {/* Box 2 */}
-        <Box sx={{ color: "white" }}>
+        <Box
+          sx={{
+            color: "white",
+            flex: "1 1 250px",
+            mt: { xs: 2, md: 0 },
+            boxSizing: "border-box",
+          }}
+        >
           <Typography variant="h6" gutterBottom>
             CONTACT
           </Typography>
-          <Typography variant="body2" sx={{ paddingTop: '2rem', fontSize: '1rem' }}>
-  <LocalPhoneTwoToneIcon sx={{ fontSize: '1.5rem', verticalAlign: 'middle', mr: 1 }} />
-  9843276
-</Typography>
-
-          <Typography variant="body2"  sx={{ paddingTop: '1.2rem', fontSize: '1rem' }}>
-           <MailOutlineTwoToneIcon sx={{ fontSize: '1.5rem', verticalAlign: 'middle', mr: 1 }} />  stylecutz@gmail.com
+          <Typography
+            variant="body2"
+            sx={{
+              paddingTop: "1rem",
+              fontSize: "1rem",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <LocalPhoneTwoToneIcon sx={{ mr: 1 }} />
+            8610655241
           </Typography>
-          <Typography variant="body2" sx={{ paddingTop: '1.2rem', fontSize: '1rem' }}>
-          <LocationOnSharpIcon sx={{ fontSize: '1.5rem', verticalAlign: 'middle', mr: 1 }} />   Coimbatore 
+          <Typography
+            variant="body2"
+            sx={{
+              paddingTop: "1rem",
+              fontSize: "1rem",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <MailOutlineTwoToneIcon sx={{ mr: 1 }} />
+            stylecutz@gmail.com
           </Typography>
-
-          
+          <Typography
+            variant="body2"
+            sx={{
+              paddingTop: "1rem",
+              fontSize: "1rem",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <LocationOnSharpIcon sx={{ mr: 1 }} />
+            Coimbatore
+          </Typography>
         </Box>
 
         {/* Box 3 */}
-        <Box sx={{ color: "white" }}>
-          <Typography variant="h6" gutterBottom>
+        <Box
+          sx={{
+            color: "white",
+            flex: "1 1 200px",
+            mt: { xs: 2, md: 0 },
+            boxSizing: "border-box",
+          }}
+        >
+          <Typography variant="h6" gutterBottom sx={{ fontFamily: "Cinzel, serif" }}>
             LINKS
           </Typography>
-          <Typography variant="body2"  sx={{paddingTop:'2rem'}}>About</Typography>
-          <Typography variant="body2"  sx={{paddingTop:'1rem'}}>Service</Typography>
-          <Typography variant="body2"  sx={{paddingTop:'1rem'}}>Home</Typography>
+          <Typography variant="body2" sx={{ paddingTop: "1rem", fontFamily: "Cinzel, serif" }}>
+            About
+          </Typography>
+          <Typography variant="body2" sx={{ paddingTop: "1rem", fontFamily: "Cinzel, serif" }}>
+            Service
+          </Typography>
+          <Typography variant="body2" sx={{ paddingTop: "1rem", fontFamily: "Cinzel, serif" }}>
+            Home
+          </Typography>
         </Box>
       </Box>
-        <Divider sx={{ mt: 4, borderColor: "white" }} />
 
+      <Divider sx={{ mt: 4, borderColor: "white" }} />
     </Box>
-    
   );
 };
 
 export default Footer;
-
 
 
 

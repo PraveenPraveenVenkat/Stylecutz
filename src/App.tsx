@@ -1,30 +1,25 @@
+import { useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Home from './components/Home';
+import SideBar from './components/SideBar';
 import './App.css';
-import { Box } from '@mui/material';
 
 function App() {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100vh', // full viewport height
-      }}
-    >
-      <Header />
-
-      {/* This Box will expand to fill available space */}
-      <Box sx={{ flex: 1 }}>
-        {/* Your main page content goes here (can be empty for now) */}
-      </Box>
-
+    <>
+      <Header onMenuClick={() => setDrawerOpen(true)} />
+      <Home />
+      <SideBar open={drawerOpen} onClose={() => setDrawerOpen(false)} />
       <Footer />
-    </Box>
+    </>
   );
 }
 
 export default App;
+
 
 // import Header from './components/Header';
 // import Footer from './components/Footer'

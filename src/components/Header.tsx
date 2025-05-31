@@ -9,10 +9,13 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 
-export default function MenuAppBar() {
+type Props = {
+  onMenuClick: () => void;
+};
+
+export default function MenuAppBar({ onMenuClick }: Props) {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -23,74 +26,82 @@ export default function MenuAppBar() {
   };
 
   return (
-
     <Box sx={{ flexGrow: 1 }}>
-  <AppBar
-    position="static"
-    sx={{
-      borderRadius: '20px', // ✔️ must include unit
-      height: '110px',       // ✔️ adjust to your need
-      mx: 2,                 // Optional: add horizontal margin
-      my: 2,                 // Optional: add vertical margin
-      px: 2,                 // Optional: inner padding
-      backgroundColor: '#1976d2', // Optional: custom color
-    }}
-    elevation={4} // Optional: adds shadow depth
-  >
-    <Toolbar
-      sx={{
-        height: '100%',        // ✔️ match AppBar height
-        borderRadius: '20px',  // ✔️ consistent with AppBar
-        alignItems: 'center',  // ✔️ vertically center content
-      }}
-    >
-      <IconButton
-        size="large"
-        edge="start"
-        color="inherit"
-        aria-label="menu"
-        sx={{ mr: 2 }}
+      <AppBar
+        position="static"
+        sx={{
+          marginTop: '-0.5rem',
+          borderRadius: '1.5rem',
+          height: '6rem',
+          width: '100%',
+          backgroundColor: '#1976d2',
+        }}
+        elevation={4}
       >
-        <MenuIcon />
-      </IconButton>
-      <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-        Style cutz
-      </Typography>
-      {auth && (
-        <div>
+        <Toolbar
+          sx={{
+            height: '100%',
+            borderRadius: '1.5rem',
+            alignItems: 'center',
+            px: { xs: 2, sm: 4, md: 6 },
+          }}
+        >
           <IconButton
             size="large"
-            aria-label="account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={handleMenu}
+            edge="start"
             color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+            onClick={onMenuClick} // ✅ This will trigger the drawer
           >
-            <AccountCircle />
+            <MenuIcon />
           </IconButton>
-          <Menu
-            id="menu-appbar"
-            anchorEl={anchorEl}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
+          <Typography
+            variant="h5"
+            component="div"
+            sx={{ flexGrow: 1, fontFamily: 'Cinzel, serif' }}
           >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
-          </Menu>
-        </div>
-      )}
-    </Toolbar>
-  </AppBar>
-</Box>
+            Style cutz
+          </Typography>
+          {auth && (
+            <div>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleMenu}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+              >
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose}>My account</MenuItem>
+              </Menu>
+            </div>
+          )}
+        </Toolbar>
+      </AppBar>
+    </Box>
+  );
+}
+
+
 
     // <Box sx={{ flexGrow: 1,borderRadius:'70',height:'20rem', }}>
 
@@ -143,5 +154,5 @@ export default function MenuAppBar() {
     //     </Toolbar>
     //   </AppBar>
     // </Box>
-  );
-}
+//   );
+// }
