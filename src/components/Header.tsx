@@ -29,7 +29,7 @@ export default function MenuAppBar() {
     position="static"
     sx={{
       borderRadius: '20px', // ✔️ must include unit
-      height: '120px',       // ✔️ adjust to your need
+      height: '110px',       // ✔️ adjust to your need
       mx: 2,                 // Optional: add horizontal margin
       my: 2,                 // Optional: add vertical margin
       px: 2,                 // Optional: inner padding
