@@ -14,7 +14,7 @@ type Props = {
 };
 
 export default function MenuAppBar({ onMenuClick }: Props) {
-  const [auth, setAuth] = React.useState(true);
+  const [auth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -34,7 +34,7 @@ export default function MenuAppBar({ onMenuClick }: Props) {
           borderRadius: '1.5rem',
           height: '6rem',
           width: '100%',
-          backgroundColor: '#1976d2',
+          backgroundColor: '#0d2f87',
         }}
         elevation={4}
       >

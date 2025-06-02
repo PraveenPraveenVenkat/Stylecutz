@@ -3,6 +3,7 @@ import AddIcon from '@mui/icons-material/Add';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ChildCareIcon from '@mui/icons-material/ChildCare';
 import ContentCutIcon from '@mui/icons-material/ContentCut'; 
+import Location from "./Location";
 import '@fontsource/dancing-script';
 
 const Home = () => {
@@ -46,18 +47,19 @@ const Home = () => {
         fontFamily: 'Cinzel, serif',
       }}
     >
-      Whether you're looking for a refreshing haircut, a perfect shave, or a relaxing facial, we bring you the best grooming experience. Our professionals are dedicated to helping you look your best.
+      Whether you're looking for a refreshing haircut, a perfect shave, or a relaxing facial,<br/> we bring you the best grooming experience. Our professionals are dedicated to helping you look your best.
     </Typography>
   </Box>
 
   {/* Right Side - Book Slot */}
   <Box
     sx={{
-      backgroundColor: '#ffffff',
+      backgroundColor: '#3994d5',
       p: 4,
       borderRadius: '1.5rem',
       boxShadow: 3,
-      minWidth: '300px',
+       width: '300px',      // 👈 reduced width
+    height: '23rem',
     }}
   >
     <Typography
@@ -71,20 +73,20 @@ const Home = () => {
       fullWidth
       label="Name"
       variant="outlined"
-      sx={{ mb: 2 }}
+      sx={{ mb: 2,backgroundColor:'white',borderRadius:'0.5rem' }}
     />
     <TextField
       fullWidth
       type="date"
       variant="outlined"
-      sx={{ mb: 2 }}
+      sx={{ mb: 2,backgroundColor:'white',borderRadius:'0.5rem'  }}
       InputLabelProps={{ shrink: true }}
     />
     <TextField
       fullWidth
       type="time"
       variant="outlined"
-      sx={{ mb: 3 }}
+      sx={{ mb: 3,backgroundColor:'white',borderRadius:'0.5rem'  }}
       InputLabelProps={{ shrink: true }}
     />
 
@@ -93,11 +95,11 @@ const Home = () => {
       variant="contained"
       sx={{
         backgroundColor: '#0d2f87',
-        fontFamily: 'Cinzel, serif',
-        '&:hover': { backgroundColor: '#0b256c' },
+        fontFamily: 'sans-serif',
+        '&:hover': { backgroundColor: '#2b333a' },
       }}
     >
-      Confirm Booking
+      Confirm 
     </Button>
   </Box>
 </Box>
@@ -319,7 +321,7 @@ const Home = () => {
             <AccountCircleIcon /> <AddIcon sx={{ mx: 0.5 }} /> Happy <br /> Customer
           </Typography>
 
-          <Typography
+          {/* <Typography
             variant="button"
             sx={{
               fontFamily: 'Cinzel, serif',
@@ -333,9 +335,15 @@ const Home = () => {
               width: '12rem',
               mx: 'auto'
             }}
-          >
-            <AccountCircleIcon /> <AddIcon sx={{ pl: 1 }} /> Happy <br /> Customer
-          </Typography>
+          > */}
+            {/* <AccountCircleIcon /> <AddIcon sx={{ pl: 1 }} /> Happy <br /> Customer */}
+          {/* </Typography> */}
+
+
+          
+         <Box sx={{ mt: 6, px: 6 }}>
+        <Location />
+      </Box>
                 
         </Box>
 
