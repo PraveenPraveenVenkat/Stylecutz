@@ -4,14 +4,47 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ChildCareIcon from '@mui/icons-material/ChildCare';
 import ContentCutIcon from '@mui/icons-material/ContentCut'; 
 import Location from "./Location";
-import '@fontsource/dancing-script';
+import axios from "axios";
+import { useEffect, useState } from "react";
+// import '@fontsource/dancing-script'; // no need to specify file path
+
 
 const Home = () => {
+  const [name, setName] = useState('');
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+
+  const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:3030';
+
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post(`${baseUrl}/api/bookings`, {
+        name,
+        date,
+        time,
+      });
+
+      console.log('Booking confirmed:', response.data);
+      alert('Booking Successful!');
+      setName('');
+      setDate('');
+      setTime('');
+    } catch (error) {
+      console.error('Booking failed:', error);
+      alert('Booking Failed. Try again.');
+    }
+  };
+
+  useEffect(() => {
+    axios.get(`${baseUrl}/users/profiles`)
+      .then(response => console.log('API data:', response.data))
+      .catch(error => console.error('GET request error:', error));
+  }, []);
+
+// localhost:3030/users/profiles - get
   return (
+
     <>
-
-
-
 <Box
   sx={{
     display: 'flex',
@@ -52,56 +85,63 @@ const Home = () => {
   </Box>
 
   {/* Right Side - Book Slot */}
-  <Box
-    sx={{
-      backgroundColor: '#3994d5',
-      p: 4,
-      borderRadius: '1.5rem',
-      boxShadow: 3,
-       width: '300px',      // 👈 reduced width
-    height: '23rem',
-    }}
-  >
-    <Typography
-      variant="h6"
-      sx={{ fontFamily: 'Cinzel, serif', mb: 2, textAlign: 'center' }}
-    >
-      Book Your Slot
-    </Typography>
-
-    <TextField
-      fullWidth
-      label="Name"
-      variant="outlined"
-      sx={{ mb: 2,backgroundColor:'white',borderRadius:'0.5rem' }}
-    />
-    <TextField
-      fullWidth
-      type="date"
-      variant="outlined"
-      sx={{ mb: 2,backgroundColor:'white',borderRadius:'0.5rem'  }}
-      InputLabelProps={{ shrink: true }}
-    />
-    <TextField
-      fullWidth
-      type="time"
-      variant="outlined"
-      sx={{ mb: 3,backgroundColor:'white',borderRadius:'0.5rem'  }}
-      InputLabelProps={{ shrink: true }}
-    />
-
-    <Button
-      fullWidth
-      variant="contained"
+    <Box
       sx={{
-        backgroundColor: '#0d2f87',
-        fontFamily: 'sans-serif',
-        '&:hover': { backgroundColor: '#2b333a' },
+        backgroundColor: '#9BCBF7',
+        p: 4,
+        borderRadius: '1.5rem',
+        boxShadow: 3,
+        width: '300px',
+        height: '23rem',
       }}
     >
-      Confirm 
-    </Button>
-  </Box>
+      <Typography
+        variant="h6"
+        sx={{ fontFamily: 'Cinzel, serif', mb: 2, textAlign: 'center' }}
+      >
+        Book Your Slot
+      </Typography>
+
+      <TextField
+        fullWidth
+        label="Name"
+        variant="outlined"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        sx={{ mb: 2, backgroundColor: 'white', borderRadius: '0.5rem' }}
+      />
+      <TextField
+        fullWidth
+        type="date"
+        variant="outlined"
+        value={date}
+        onChange={(e) => setDate(e.target.value)}
+        sx={{ mb: 2, backgroundColor: 'white', borderRadius: '0.5rem' }}
+        InputLabelProps={{ shrink: true }}
+      />
+      <TextField
+        fullWidth
+        type="time"
+        variant="outlined"
+        value={time}
+        onChange={(e) => setTime(e.target.value)}
+        sx={{ mb: 3, backgroundColor: 'white', borderRadius: '0.5rem' }}
+        InputLabelProps={{ shrink: true }}
+      />
+
+      <Button
+        fullWidth
+        variant="contained"
+        onClick={handleSubmit}
+        sx={{
+          backgroundColor: '#0d2f87',
+          fontFamily: 'sans-serif',
+          '&:hover': { backgroundColor: '#1B2936' },
+        }}
+      >
+        Confirm
+      </Button>
+    </Box>
 </Box>
 
 
@@ -109,7 +149,7 @@ const Home = () => {
       {/* Top Section */}
       <Box
         sx={{
-          backgroundColor: "#0d2f87",
+          backgroundColor: "#1B2936",
           height: { xs: "auto", md: "13rem",xl:'15rem' },
           width: "100%",
           borderRadius: "2rem",
@@ -307,7 +347,7 @@ const Home = () => {
             variant="button"
             sx={{
               fontFamily: 'Cinzel, serif',
-              backgroundColor: "#0d2f87",
+              backgroundColor: "#1B2936",
               borderRadius: '2rem',
               height: '3rem',
               color: 'white',
@@ -450,7 +490,7 @@ const Home = () => {
       <Typography
         variant="h4"
         sx={{
-          backgroundColor: '#0d2f87',
+          backgroundColor: '#1B2936',
           height: '4rem',
           fontFamily: 'Cinzel, serif',
           width: { xs: '80%', sm: '40%', md: '24%' },

@@ -34,7 +34,7 @@ export default function MenuAppBar({ onMenuClick }: Props) {
           borderRadius: '1.5rem',
           height: '6rem',
           width: '100%',
-          backgroundColor: '#0d2f87',
+          backgroundColor: '#1B2936',
         }}
         elevation={4}
       >

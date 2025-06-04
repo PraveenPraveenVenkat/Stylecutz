@@ -17,11 +17,9 @@ const Footer = () => {
         flexWrap: "wrap",
         gap: { xs: 2, md: 4 },
         width: "100%",
-        maxWidth: "100%",
-        boxSizing: "border-box",
-        backgroundColor: "#0d2f87",
-        px: 4,
-        py: 6,
+        backgroundColor: "#1B2936",
+        px: { xs: 12, md: 4 }, // reduced horizontal padding on mobile
+        py: { xs: 13, md: 6 }, // reduced vertical padding on mobile
       }}
     >
       {/* Box 1 - Style cutz in white box */}

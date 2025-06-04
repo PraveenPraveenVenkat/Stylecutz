@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
-import Service from './components/Service';
+// import Service from './components/Service';
 // import About from './components/Aboutus';
 // import Contact from './components/Contact';
 import SideBar from './components/SideBar';
@@ -19,7 +19,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/service" element={<Service />} />
+        {/* <Route path="/service" element={<Service />} /> */}
         {/* <Route path="/about" element={<About />} /> */}
         {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
