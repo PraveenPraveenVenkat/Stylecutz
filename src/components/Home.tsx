@@ -68,6 +68,7 @@ const Home = () => {
         fontFamily: 'Cinzel, serif',
         color: '#0d2f87',
         mb: 2,
+        ml:{xs:'-2.5rem'},
       }}
     >
       Experience the Best Salon Service
@@ -164,8 +165,10 @@ const Home = () => {
         <ContentCutIcon
           sx={{
             position: 'absolute',
-            top: '80%',
-            left: '22%',
+            // top: '80%',
+            // left: '22%',
+            top:{xs:'3rem',lg:'80%'},
+            left:{xs:'20rem',md:'25%',lg:'22%'},
             transform: 'translate(-50%, -50%) rotate(220deg)',
             fontSize: { xs: 80, md: 80 },
             color: 'white',
@@ -177,8 +180,9 @@ const Home = () => {
         />
         <ChildCareIcon   sx={{
             position: 'absolute',
-            top: '20%',
-            left: '5%',
+            // left: '5%',
+            top:{xs:'5rem',lg:'20%'},
+             left: {xs:'2rem',md:'12rem'},
             transform: 'translate(-50%, -50%) rotate(220deg)',
             fontSize: { xs: 80, md: 80 },
             color: 'white',
@@ -320,8 +324,10 @@ const Home = () => {
                <ContentCutIcon
           sx={{
             position: 'absolute',
-            top: '30%',
-            left: '90%',
+            // top: '30%',
+            // left: '90%',
+             left: {xs:'2rem',lg:'90%'},
+             top:{xs:'30rem',lg:'30%'},
             transform: 'translate(-50%, -50%) rotate(60deg)',
             fontSize: { xs: 80, md: 80 },
             color: 'white',
@@ -422,10 +428,10 @@ const Home = () => {
       >
         {/* Left Side */}
         <Box sx={{ flex: 1 }}>
-          <Typography variant="h3" sx={{ fontFamily: 'Cinzel, serif', mb: 3,pl:'3rem' }}>
+          <Typography variant="h3" sx={{ fontFamily: 'Cinzel, serif', mb: 3,pl:'3rem',ml:{xs:'-2rem'}, }}>
             About Us
           </Typography>
-          <Typography variant="h5" sx={{ fontFamily: 'Cinzel, serif', lineHeight: 1.6,pl:'8rem' }}>
+          <Typography variant="h5" sx={{ fontFamily: 'Cinzel, serif', lineHeight: 1.6,pl:'8rem',ml:{xs:'-1rem'}, }}>
             Our salon is committed to <br />
             making our <span>clients feel</span> beautiful, <br />
             inside and out, by providing <br />
@@ -493,14 +499,15 @@ const Home = () => {
           backgroundColor: '#1B2936',
           height: '4rem',
           fontFamily: 'Cinzel, serif',
-          width: { xs: '80%', sm: '40%', md: '24%' },
+          width: { xs: '60%', sm: '40%', md: '24%' },
           color: 'white',
           borderTopRightRadius: '1rem',
           borderBottomRightRadius: '1rem',
           display: 'flex',
           alignItems: 'center',
           pl: { xs: 4, md: 12 },
-          mx: { xs: 'auto', md: 0 },
+          ml:{xs:'-1rem'},
+          
           mb: 4,
         }}
       >
