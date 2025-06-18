@@ -86,15 +86,16 @@ export default function MenuAppBar({ onMenuClick }: Props) {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1  }}>
       <AppBar
         position="static"
         sx={{
           marginTop: '-0.5rem',
           borderRadius: '1.5rem',
           height: '6rem',
-          width: '100%',
+          width: {xs:'102%',md:'100%',lg:'100%'},
           backgroundColor: '#1B2936',
+         
         }}
         elevation={4}
       >

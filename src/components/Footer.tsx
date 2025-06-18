@@ -10,7 +10,7 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        width: "100%", // Ensures full width on all screens
+        width: {xs:'92%',md:'100%',lg:'94.1%'}, // Ensures full width on all screens
         backgroundColor: "#1B2936",
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
@@ -20,7 +20,7 @@ const Footer = () => {
         gap: { xs: 2, md: 4 },
         px: { xs: 4, md: 6 },
         py: { xs: 4, md: 6 },
-       height:{xs:'8rem',lg:'10rem'}, // Adjust height if needed
+       height:{xs:'11rem',lg:'10rem'}, // Adjust height if needed
        maxWidth:{xs:'100%',},
         mt: "auto", // push to bottom
       }}
@@ -85,6 +85,10 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+
+
 
 
 // import { FacebookTwoTone } from "@mui/icons-material";
