@@ -10,7 +10,7 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        width: {xs:'92%',md:'100%',lg:'94.1%'}, // Ensures full width on all screens
+        width: {xs:'90%',md:'100%',lg:'94.1%'}, // Ensures full width on all screens
         backgroundColor: "#1B2936",
         display: "flex",
         flexDirection: { xs: "column", md: "row" },

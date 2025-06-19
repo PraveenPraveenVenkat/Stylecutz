@@ -1,4 +1,4 @@
-import { Container, Typography, Grid, Card, CardContent, CardMedia } from '@mui/material';
+
 
 const services = [
   {
@@ -35,36 +35,31 @@ const services = [
 
 export default function Service() {
   return (
-    <Container sx={{ py: 5 }}>
-      <Typography variant="h4" align="center" gutterBottom>
-        Our Salon Services
-      </Typography>
-      <Typography variant="subtitle1" align="center" paragraph>
-        Experience beauty and relaxation with our wide range of professional services.
-      </Typography>
-
-      <Grid container spacing={4} sx={{ mt: 3 }}>
+    <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-gray-800 mb-4">Our Salon Services</h1>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          Experience beauty and relaxation with our wide range of professional services.
+        </p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-              <CardMedia
-                component="img"
-                image={service.image}
+          <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div className="h-48 overflow-hidden">
+              <img 
+                src={service.image} 
                 alt={service.title}
-                height="200"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
-              <CardContent sx={{ flexGrow: 1 }}>
-                <Typography variant="h6" gutterBottom>
-                  {service.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {service.description}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">{service.title}</h3>
+              <p className="text-gray-600 leading-relaxed">{service.description}</p>
+            </div>
+          </div>
         ))}
-      </Grid>
-    </Container>
+      </div>
+    </div>
   );
 }
