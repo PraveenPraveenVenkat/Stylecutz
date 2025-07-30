@@ -10,73 +10,191 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        width: {xs:'90%',md:'100%',lg:'94.1%'}, // Ensures full width on all screens
+        width: { xs: "100vw", sm: "100vw", md: "100%", lg: "100%" },
+        maxWidth: "100vw",
         backgroundColor: "#1B2936",
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
-        justifyContent: "space-around",
-        alignItems: "flex-start",
+        justifyContent: { xs: "center", md: "space-around" },
+        alignItems: { xs: "center", md: "flex-start" },
         flexWrap: "wrap",
         gap: { xs: 2, md: 4 },
-        px: { xs: 4, md: 6 },
-        py: { xs: 4, md: 6 },
-       height:{xs:'11rem',lg:'10rem'}, // Adjust height if needed
-       maxWidth:{xs:'100%',},
-        mt: "auto", // push to bottom
+        px: { xs: 2, sm: 4, md: 6 },
+        py: { xs: 3, sm: 4, md: 6 },
+        minHeight: { xs: "auto", md: "10rem" },
+        mt: "auto",
+        boxSizing: "border-box",
       }}
     >
       {/* Box 1 - Brand */}
-      <Box sx={{ display: "flex", flexDirection: "column", gap: 1, flex: "1 1 250px" }}>
-        <Box sx={{ backgroundColor: "white", borderRadius: "0.9rem", p: 2, maxWidth: "12rem" }}>
-          <Typography variant="h6" sx={{ fontFamily: "Cinzel, serif" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 1,
+          flex: "1 1 250px",
+          alignItems: { xs: "center", md: "flex-start" },
+          mb: { xs: 2, md: 0 },
+        }}
+      >
+        <Box
+          sx={{
+            backgroundColor: "white",
+            borderRadius: "0.9rem",
+            p: 2,
+            maxWidth: "12rem",
+            width: "100%",
+            textAlign: "center",
+          }}
+        >
+          <Typography
+            variant="h6"
+            sx={{
+              fontFamily: "Cinzel, serif",
+              fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.5rem" },
+            }}
+          >
             Style cutz
           </Typography>
         </Box>
         <Typography
           variant="body2"
-          sx={{ fontFamily: "Cinzel, serif", color: "white", lineHeight: 1.6, pt: 1 }}
+          sx={{
+            fontFamily: "Cinzel, serif",
+            color: "white",
+            lineHeight: 1.6,
+            pt: 1,
+            fontSize: { xs: "0.9rem", sm: "1rem" },
+            textAlign: { xs: "center", md: "left" },
+          }}
         >
           lovely, change, perfect <br />
           will do it... <br />
           we are develop our personality!
         </Typography>
         <Box sx={{ display: "flex", alignItems: "center", gap: 1, pt: 1 }}>
-          <InstagramIcon sx={{ color: "white" }} />
-          <FacebookTwoTone sx={{ color: "white" }} />
+          <InstagramIcon
+            sx={{ color: "white", fontSize: { xs: 22, sm: 26 } }}
+          />
+          <FacebookTwoTone
+            sx={{ color: "white", fontSize: { xs: 22, sm: 26 } }}
+          />
         </Box>
       </Box>
 
       {/* Box 2 - Contact */}
-      <Box sx={{ color: "white", flex: "1 1 250px", mt: { xs: 2, md: 0 }, pt: { xs: 1, md: "3rem" } }}>
-        <Typography variant="h6" gutterBottom sx={{ fontFamily: "Cinzel, serif" }}>
+      <Box
+        sx={{
+          color: "white",
+          flex: "1 1 250px",
+          mt: { xs: 2, md: 0 },
+          pt: { xs: 1, md: "3rem" },
+          alignItems: { xs: "center", md: "flex-start" },
+          textAlign: { xs: "center", md: "left" },
+        }}
+      >
+        <Typography
+          variant="h6"
+          gutterBottom
+          sx={{
+            fontFamily: "Cinzel, serif",
+            fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.5rem" },
+          }}
+        >
           CONTACT
         </Typography>
-        <Typography variant="body2" sx={{ display: "flex", alignItems: "center", pt: 1 }}>
-          <LocalPhoneTwoToneIcon sx={{ mr: 1 }} />
+        <Typography
+          variant="body2"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            pt: 1,
+            justifyContent: { xs: "center", md: "flex-start" },
+            fontSize: { xs: "0.9rem", sm: "1rem" },
+          }}
+        >
+          <LocalPhoneTwoToneIcon sx={{ mr: 1, fontSize: { xs: 18, sm: 22 } }} />
           8610655241
         </Typography>
-        <Typography variant="body2" sx={{ display: "flex", alignItems: "center", pt: 1 }}>
-          <MailOutlineTwoToneIcon sx={{ mr: 1 }} />
+        <Typography
+          variant="body2"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            pt: 1,
+            justifyContent: { xs: "center", md: "flex-start" },
+            fontSize: { xs: "0.9rem", sm: "1rem" },
+          }}
+        >
+          <MailOutlineTwoToneIcon
+            sx={{ mr: 1, fontSize: { xs: 18, sm: 22 } }}
+          />
           stylecutz@gmail.com
         </Typography>
-        <Typography variant="body2" sx={{ display: "flex", alignItems: "center", pt: 1 }}>
-          <LocationOnSharpIcon sx={{ mr: 1 }} />
+        <Typography
+          variant="body2"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            pt: 1,
+            justifyContent: { xs: "center", md: "flex-start" },
+            fontSize: { xs: "0.9rem", sm: "1rem" },
+          }}
+        >
+          <LocationOnSharpIcon sx={{ mr: 1, fontSize: { xs: 18, sm: 22 } }} />
           Coimbatore
         </Typography>
       </Box>
 
       {/* Box 3 - Links */}
-      <Box sx={{ color: "white", flex: "1 1 200px", mt: { xs: 2, md: 0 }, pt: { xs: 1, md: "3rem" } }}>
-        <Typography variant="h6" gutterBottom sx={{ fontFamily: "Cinzel, serif" }}>
+      <Box
+        sx={{
+          color: "white",
+          flex: "1 1 200px",
+          mt: { xs: 2, md: 0 },
+          pt: { xs: 1, md: "3rem" },
+          alignItems: { xs: "center", md: "flex-start" },
+          textAlign: { xs: "center", md: "left" },
+        }}
+      >
+        <Typography
+          variant="h6"
+          gutterBottom
+          sx={{
+            fontFamily: "Cinzel, serif",
+            fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.5rem" },
+          }}
+        >
           LINKS
         </Typography>
-        <Typography variant="body2" sx={{ pt: 1, fontFamily: "Cinzel, serif" }}>
+        <Typography
+          variant="body2"
+          sx={{
+            pt: 1,
+            fontFamily: "Cinzel, serif",
+            fontSize: { xs: "0.9rem", sm: "1rem" },
+          }}
+        >
           About
         </Typography>
-        <Typography variant="body2" sx={{ pt: 1, fontFamily: "Cinzel, serif" }}>
+        <Typography
+          variant="body2"
+          sx={{
+            pt: 1,
+            fontFamily: "Cinzel, serif",
+            fontSize: { xs: "0.9rem", sm: "1rem" },
+          }}
+        >
           Service
         </Typography>
-        <Typography variant="body2" sx={{ pt: 1, fontFamily: "Cinzel, serif" }}>
+        <Typography
+          variant="body2"
+          sx={{
+            pt: 1,
+            fontFamily: "Cinzel, serif",
+            fontSize: { xs: "0.9rem", sm: "1rem" },
+          }}
+        >
           Home
         </Typography>
       </Box>
@@ -85,11 +203,6 @@ const Footer = () => {
 };
 
 export default Footer;
-
-
-
-
-
 
 // import { FacebookTwoTone } from "@mui/icons-material";
 // import InstagramIcon from "@mui/icons-material/Instagram";
@@ -177,11 +290,6 @@ export default Footer;
 
 // export default Footer;
 
-
-
-
-
-
 // import { FacebookTwoTone } from "@mui/icons-material";
 // import InstagramIcon from "@mui/icons-material/Instagram";
 // import LocalPhoneTwoToneIcon from "@mui/icons-material/LocalPhoneTwoTone";
@@ -223,7 +331,7 @@ export default Footer;
 //             borderRadius: "0.9rem",
 //             p: 2,
 //             maxWidth: "12rem",
-            
+
 //           }}
 //         >
 //           <Typography variant="h6" sx={{ fontFamily: "Cinzel, serif" }}>
@@ -332,8 +440,6 @@ export default Footer;
 
 // export default Footer;
 
-
-
 // import { FacebookTwoTone } from "@mui/icons-material";
 // import InstagramIcon from "@mui/icons-material/Instagram";
 // import LocalPhoneTwoToneIcon from '@mui/icons-material/LocalPhoneTwoTone';
@@ -352,43 +458,41 @@ export default Footer;
 //           width: "Fullscreen",
 //           borderRadius: "2rem",
 
-         
 //         }}
 //       >
 //         <Box sx={{ flex:'grow'}}>
 
-       
 //         // ?Box 1
-        // <Box
-        //   sx={{
-        //     backgroundColor: "white",
-        //     width: "6rem",
-        //     pl: "3rem",
-        //     ml: "2rem",
-        //     height: "3.6rem",
-        //     borderRadius: "0.9rem",
-        //   }}
-        // >
-        //   <p>
-        //     Style
-        //     <br />
-        //     cutz
-        //   </p>
+// <Box
+//   sx={{
+//     backgroundColor: "white",
+//     width: "6rem",
+//     pl: "3rem",
+//     ml: "2rem",
+//     height: "3.6rem",
+//     borderRadius: "0.9rem",
+//   }}
+// >
+//   <p>
+//     Style
+//     <br />
+//     cutz
+//   </p>
 
-        //   <p>
-        //     lovely, change, perfect
-        //     <br />
-        //     will do it...
-        //     <br />
-        //     we are develop our personality!
-        //     <InstagramIcon />
-        //     <FacebookTwoTone />
-        //     <Divider sx={{ width: "40rem" }} />
-        //   </p>
-        // </Box>
+//   <p>
+//     lovely, change, perfect
+//     <br />
+//     will do it...
+//     <br />
+//     we are develop our personality!
+//     <InstagramIcon />
+//     <FacebookTwoTone />
+//     <Divider sx={{ width: "40rem" }} />
+//   </p>
+// </Box>
 
 //         // ?Box 2
-//         <Box> 
+//         <Box>
 //             <Typography variant="h4">
 //                 CONTACT
 //             </Typography>
@@ -425,7 +529,6 @@ export default Footer;
 //         Home
 //     </Typography>
 // </Box>
-
 
 //  </Box>
 //       </Box>
