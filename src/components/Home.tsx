@@ -1,5 +1,4 @@
 import { Box, Button, Divider, TextField, Typography } from "@mui/material";
-// import AddIcon from '@mui/icons-material/Add';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ChildCareIcon from '@mui/icons-material/ChildCare';
 import ContentCutIcon from '@mui/icons-material/ContentCut'; 
@@ -38,100 +37,109 @@ const Home = () => {
     <Box sx={{ overflowX: "hidden", width: "100%" }}>
       {/* Booking Section */}
       <Box
+  sx={{
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    px: 6,
+    py: 8,
+    backgroundColor: '#f5f5f5',
+    borderRadius: '1.5rem',
+    mt: 6,
+    gap: 4,
+    flexWrap: 'wrap',
+      maxWidth: { xs: '100%', lg: '100%' },
+     // Responsive
+  }}
+>
+  {/* Left Side - Salon Content */}
+  <Box sx={{ flex: 1, minWidth: '300px',
+      maxWidth: { xs: '100%', lg: '90%' },
+  }}>
+    <Typography
+      variant="h4"
+      sx={{
+        fontFamily: 'Cinzel, serif',
+        color: '#0d2f87',
+        mb: 2,
+        ml:{xs:'-2.5rem'},
+      }}
+    >
+      Experience the Best Salon Service
+    </Typography>
+    <Typography
+      variant="body1"
+      sx={{
+        fontSize: '1.1rem',
+        lineHeight: 1.8,
+        fontFamily: 'Cinzel, serif',
+      }}
+    >
+      Whether you're looking for a refreshing haircut, a perfect shave, or a relaxing facial,<br/> we bring you the best grooming experience. Our professionals are dedicated to helping you look your best.
+    </Typography>
+  </Box>
+
+  {/* Right Side - Book Slot */}
+    <Box
+      sx={{
+        backgroundColor: '#9BCBF7',
+        p: 4,
+        borderRadius: '1.5rem',
+        boxShadow: 3,
+        width: '300px',
+        height: '23rem',
+      }}
+    >
+      <Typography
+        variant="h6"
+        sx={{ fontFamily: 'Cinzel, serif', mb: 2, textAlign: 'center' }}
+      >
+        Book Your Slot
+      </Typography>
+
+      <TextField
+        fullWidth
+        label="Name"
+        variant="outlined"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        sx={{ mb: 2, backgroundColor: 'white', borderRadius: '0.5rem' }}
+      />
+      <TextField
+        fullWidth
+        type="date"
+        variant="outlined"
+        value={date}
+        onChange={(e) => setDate(e.target.value)}
+        sx={{ mb: 2, backgroundColor: 'white', borderRadius: '0.5rem' }}
+        InputLabelProps={{ shrink: true }}
+      />
+      <TextField
+        fullWidth
+        type="time"
+        variant="outlined"
+        value={time}
+        onChange={(e) => setTime(e.target.value)}
+        sx={{ mb: 3, backgroundColor: 'white', borderRadius: '0.5rem' }}
+        InputLabelProps={{ shrink: true }}
+      />
+
+      <Button
+        fullWidth
+        variant="contained"
+        onClick={handleSubmit}
         sx={{
-          display: 'flex',
-          flexDirection: { xs: 'column', md: 'row' },
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          px: { xs: 2, md: 6 },
-          py: { xs: 4, md: 8 },
-          backgroundColor: '#f5f5f5',
-          borderRadius: '1.5rem',
-          mt: { xs: 3, md: 6 },
-          gap: 4,
-          flexWrap: 'wrap',
-          width: "100%",
+          backgroundColor: '#0d2f87',
+          fontFamily: 'sans-serif',
+          '&:hover': { backgroundColor: '#1B2936' },
         }}
       >
-        {/* Left Side */}
-        <Box sx={{ flex: 1, minWidth: '280px' }}>
-          <Typography
-            variant="h4"
-            sx={{
-              fontFamily: 'Cinzel, serif',
-              color: '#0d2f87',
-              mb: 2,
-              textAlign: { xs: "center", md: "left" }
-            }}
-          >
-            Experience the Best Salon Service
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              fontSize: { xs: "1rem", md: "1.1rem" },
-              lineHeight: 1.8,
-              fontFamily: 'Cinzel, serif',
-              textAlign: { xs: "center", md: "left" }
-            }}
-          >
-            Whether you're looking for a refreshing haircut, a perfect shave, or a relaxing facial, 
-            we bring you the best grooming experience. Our professionals are dedicated to helping you look your best.
-          </Typography>
-        </Box>
+        Confirm
+      </Button>
+    </Box>
+</Box>
 
-        {/* Right Form */}
-        <Box
-          sx={{
-            backgroundColor: '#9BCBF7',
-            p: { xs: 2, md: 4 },
-            borderRadius: '1.5rem',
-            boxShadow: 3,
-            width: { xs: "100%", sm: "320px", md: "350px" },
-            mx: "auto"
-          }}
-        >
-          <Typography
-            variant="h6"
-            sx={{ fontFamily: 'Cinzel, serif', mb: 2, textAlign: 'center' }}
-          >
-            Book Your Slot
-          </Typography>
-
-          <TextField
-            fullWidth label="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            sx={{ mb: 2, backgroundColor: 'white' }}
-          />
-          <TextField
-            fullWidth type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            sx={{ mb: 2, backgroundColor: 'white' }}
-            InputLabelProps={{ shrink: true }}
-          />
-          <TextField
-            fullWidth type="time"
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
-            sx={{ mb: 3, backgroundColor: 'white' }}
-            InputLabelProps={{ shrink: true }}
-          />
-
-          <Button
-            fullWidth
-            variant="contained"
-            onClick={handleSubmit}
-            sx={{
-              backgroundColor: '#0d2f87',
-              '&:hover': { backgroundColor: '#1B2936' },
-            }}
-          >
-            Confirm
-          </Button>
-        </Box>
-      </Box>
 
       {/* Top Section (Boxes) */}
       <Box
@@ -428,13 +436,11 @@ const Home = () => {
           >
             <img
               style={{ width: '10rem', borderRadius: '1rem', objectFit: 'cover' }}
-              src="https://media.istockphoto.com/id/1783214748/photo/processional-hair-dresser-styling-hair-of-young-woman-in-beauty-salon.jpg?b=1&s=612x612"
-              alt="Hair Coloring"
+              src="https://media.istockphoto.com/id/1783214748/photo/processional-hair-dresser-styling-hair-of-young-woman-in-beauty-salon.jpg?b=1&s=612x612&w=0&k=20&c=QFxEeMhnsmrEI4Yw_6SrvZT5KSAvipr3NziBWC_-jrg="
             />
             <img
               style={{ width: '10rem', borderRadius: '1rem', objectFit: 'cover' }}
-              src="https://media.istockphoto.com/id/872361244/photo/man-getting-his-beard-trimmed-with-electric-razor.jpg?b=1&s=612x612"
-              alt="Beard trimming"
+              src="https://media.istockphoto.com/id/872361244/photo/man-getting-his-beard-trimmed-with-electric-razor.jpg?b=1&s=612x612&w=0&k=20&c=vx6-oGkjB0nB3dwMBZf5QSQnvnlqZ0xWGdFFl7aETH0="
             />
           </Box>
 
