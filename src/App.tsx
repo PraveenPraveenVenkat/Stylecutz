@@ -7,6 +7,7 @@ import SideBar from "./components/SideBar";
 import Service from "./components/Service";
 import About from "./components/Aboutus";
 import  Dashboard  from "./components/dashboard/Dashboard";
+import AdminLogin from "./components/admin/AdminLogin";
 import "./App.css";
 
 const SplashScreen = () => {
@@ -40,6 +41,7 @@ function App() {
           <Route path="/Service" element={<Service/>} />
           <Route path="/about" element={<About />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
         </Routes>
       </main>
       <SideBar open={drawerOpen} onClose={() => setDrawerOpen(false)} />
