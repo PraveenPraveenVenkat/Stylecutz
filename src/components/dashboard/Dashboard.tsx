@@ -78,7 +78,7 @@ const Dashboard = () => {
     status: 'confirmed'
   });
 
-  const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:3030';
+  // const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:3030';
 
   // Time slots for dropdown
   const timeSlots = [
@@ -91,7 +91,7 @@ const Dashboard = () => {
   // Fetch bookings from API
   const fetchBookings = async () => {
     try {
-      const response = await axios.get<Booking[]>(`${baseUrl}/api/bookings`);
+      const response = await axios.get<Booking[]>(`${import.meta.env.VITE_API_URL}/api/bookings`);
       setBookings(response.data);
     } catch (error) {
       console.error('Error fetching bookings:', error);
@@ -128,9 +128,9 @@ const Dashboard = () => {
   const handleSubmit = async () => {
     try {
       if (editingBooking) {
-        await axios.put(`${baseUrl}/api/bookings/${editingBooking.id}`, formData);
+        await axios.put(`${import.meta.env.VITE_API_URL}/customer-login${editingBooking.id}`, formData);
       } else {
-        await axios.post(`${baseUrl}/api/bookings`, formData);
+        await axios.post(`${import.meta.env.VITE_API_URL}/customer-login/add`, formData);
       }
       fetchBookings();
       handleCloseDialog();
@@ -144,7 +144,7 @@ const Dashboard = () => {
   const handleDelete = async (id: number) => {
     if (window.confirm('Are you sure you want to delete this booking?')) {
       try {
-        await axios.delete(`${baseUrl}/api/bookings/${id}`);
+        await axios.delete(`${import.meta.env.VITE_API_URL}/api/bookings/${id}`);
         fetchBookings();
       } catch (error) {
         console.error('Error deleting booking:', error);

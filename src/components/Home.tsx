@@ -11,11 +11,11 @@ const Home = () => {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
 
-  const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:3030';
+  // const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5001';
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post(`${baseUrl}/api/bookings`, { name, date, time });
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/customer-login/add`, { name, date, time });
       console.log('Booking confirmed:', response.data);
       alert('Booking Successful!');
       setName('');
@@ -27,8 +27,9 @@ const Home = () => {
     }
   };
 
+
   useEffect(() => {
-    axios.get(`${baseUrl}/users/profiles`)
+    axios.get(`${import.meta.env.VITE_API_URL}/customer-login/get`)
       .then(response => console.log('API data:', response.data))
       .catch(error => console.error('GET request error:', error));
   }, []);
