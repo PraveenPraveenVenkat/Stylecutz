@@ -48,7 +48,7 @@ export default function MenuAppBar({ onMenuClick }: Props) {
   const handleAdminDashboard = () => {
     handleClose();
     if (isAdminLoggedIn) {
-      navigate("/admin/dashboard");
+      navigate("/dashboard");
     }
   };
 
@@ -56,7 +56,7 @@ export default function MenuAppBar({ onMenuClick }: Props) {
   const handleViewBookings = () => {
     handleClose();
     if (isAdminLoggedIn) {
-      navigate("/admin/bookings");
+      navigate("/dashboard");
     }
   };
 

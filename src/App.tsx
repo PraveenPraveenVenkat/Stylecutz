@@ -9,6 +9,9 @@ import About from "./components/Aboutus";
 import  Dashboard  from "./components/dashboard/Dashboard";
 import AdminLogin from "./components/admin/AdminLogin";
 import "./App.css";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const SplashScreen = () => {
   return (
@@ -34,6 +37,7 @@ function App() {
 
   return (
     <>
+      <ToastContainer position="top-right" autoClose={3000} />
       <Header onMenuClick={() => setDrawerOpen(true)} />
       <main className="main-content">
         <Routes>
