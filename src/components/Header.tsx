@@ -45,20 +45,20 @@ export default function MenuAppBar({ onMenuClick }: Props) {
   };
 
   // Handle Admin Dashboard
-  const handleAdminDashboard = () => {
-    handleClose();
-    if (isAdminLoggedIn) {
-      navigate("/dashboard");
-    }
-  };
+  // const handleAdminDashboard = () => {
+  //   handleClose();
+  //   if (isAdminLoggedIn) {
+  //     navigate("/dashboard");
+  //   }
+  // };
 
   // Handle View Bookings (for admin)
-  const handleViewBookings = () => {
-    handleClose();
-    if (isAdminLoggedIn) {
-      navigate("/dashboard");
-    }
-  };
+  // const handleViewBookings = () => {
+  //   handleClose();
+  //   if (isAdminLoggedIn) {
+  //     navigate("/dashboard");
+  //   }
+  // };
 
   // Handle Admin Logout
   const handleLogout = () => {
